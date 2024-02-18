@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Welcome AXIT</title>
     <style>
         *{
             margin: 0;
             padding: 0;
             font-family: "Open Sans", sans-serif;
+            scroll-behavior: smooth;
         }
-        .container{}
+        :root{
+            --bg-primary-color: #ff8b38;
+            --color-title: #212121;
+            --color-description: #86878b;
+        }
+        .container{
+            
+        }
 
         /* NAV */
         .nav{
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
             height: 70px;
-            background: #333;
+            background-color: #000000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 99;
+            z-index: 999;
         }
         .nav-left{
             margin-left: 148px;
@@ -41,7 +49,7 @@
             cursor: pointer;
             position: relative;
             text-decoration: none;
-            color: #fff;
+            color: #b0b0b0;
         }
         .nav-right a::after {
             content: '';
@@ -50,7 +58,7 @@
             bottom: -27px; 
             width: 0;
             height: 4px;
-            background-color: #f08436;
+            background-color: var(--bg-primary-color);
             transition: width 0.3s; 
         }
         .nav-right a:hover::after {
@@ -111,10 +119,10 @@
             transition: background-color 0.3s, border-color 0.3s; 
         }
         .btn-download:hover {
-            border-color: #f08436; 
+            border-color: var(--bg-primary-color); 
         }
         .btn-download:active {
-            background-color: #f08436;
+            background-color: var(--bg-primary-color);
         }
         .header-right{
             width: 360px;
@@ -143,7 +151,7 @@
         } 
         .header-right .title-form span{
             margin: 0 6px;
-            color: #ff8b38;
+            color: var(--bg-primary-color);
         } 
         .header-right form input{
             width: 285px;
@@ -183,12 +191,12 @@
             transition: background-color 0.4s, color 0.6s; 
         }
         .header-right form .btn-form:hover {
-            color: #f08436;
+            color: var(--bg-primary-color);
             background-color: #fff;
         }
         .header-right form .btn-form:active {
             color: #fff;
-            background-color: #f08436;
+            background-color: var(--bg-primary-color);
         }
 
         /* FEATURES */
@@ -230,7 +238,7 @@
         }
         .feature-1 .tabs .tab.active{
             justify-content: center;
-            background-color: #ff8b38;
+            background-color: var(--bg-primary-color);
         }
         .feature-1 .main-content{
             display: flex;
@@ -239,7 +247,7 @@
         .feature-1 .main-content .title-feature{
             font-size: 20px;
             font-weight: 800;
-            color: #212121;
+            color: var(--color-title);
         }
         .feature-1 .main-content .descriptions-feature{
             display: flex;
@@ -247,10 +255,11 @@
             gap: 26px;
             margin: 50px 0 46px 0;
             font-size: 14px;
-            color: #86878b;
+            color: var(--color-description);
         }
-        .feature-1 .main-content .btn-download-feature{
-            background-color: #f08436;
+        .btn-download-feature, 
+        .btn-download-contact-us{
+            background-color: var(--bg-primary-color);
             border-radius: 4px;
             color: #fff;
             width: 121px;
@@ -260,13 +269,21 @@
             cursor: pointer;
             transition: background-color 0.4s, color 0.4s; 
             margin-bottom: 15px;
+            box-shadow: 0px 2px 2px #d6d6d6;
         }
-        .feature-1 .main-content .btn-download-feature:hover {
-            color: #f08436;
+        .btn-download-contact-us{
+            width: 148px;
+            background-color: #ff9b51;
+            margin-bottom: 0px;
+        }
+        .btn-download-feature:hover, 
+        .btn-download-contact-us:hover{
+            color: var(--bg-primary-color);
             background-color: #fff;
         }
-        .feature-1 .main-content .btn-download-feature:active {
-            border: 2px solid #f08436;
+        .btn-download-feature:active, 
+        .btn-download-contact-us:active{
+            border: 2px solid var(--bg-primary-color);
         }
         .feature-1 .img-right-feature-1{
             margin-right: 148px;
@@ -289,7 +306,7 @@
             margin-left: 100px;
         }
         .feature-2 .divider{
-            background: #ff8b38;
+            background: var(--bg-primary-color);
             margin: 26px 0;
         }
         .feature-2 .feature-2-content-right{
@@ -299,10 +316,10 @@
         .feature-2 .title-content{
             font-size: 20px;
             font-weight: 800;
-            color: #212121;
+            color: var(--color-title);
         }
         .feature-2 .description-content{
-            color: #86878b;
+            color: var(--color-description);
             font-size: 14px;
             margin-bottom: 48px;
         }
@@ -320,7 +337,7 @@
         .icon-in-circle{
             min-width: 40px; 
             height: 40px; 
-            border: 2px solid #ff8b38;
+            border: 2px solid var(--bg-primary-color);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -328,7 +345,7 @@
         }
         .feature-2 .title-item{
             font-size: 14px;
-            color: #333;
+            color: var(--color-title);
             font-weight: 700;
             margin-bottom: 8px;
         }
@@ -348,10 +365,10 @@
         .feature-3 .title-content{
             font-size: 20px;
             font-weight: 800;
-            color: #212121;
+            color: var(--color-title);
         }
         .feature-3 .divider{
-            background: #ff8b38;
+            background: var(--bg-primary-color);
             margin: 26px 0;
         }
         .feature-3 .main-content{
@@ -361,7 +378,7 @@
             gap: 26px;
         }
         .feature-3 .main-content .description-content{
-            color: #86878b;
+            color: var(--color-description);
             font-size: 14px;
         }
         .feature-3 .img-feature-3{
@@ -381,7 +398,7 @@
             font-size: 36px;
         }
         .our-process .divider{
-            background: #ff8b38;
+            background: var(--bg-primary-color);
             margin: 30px 0;
         }
         .our-process .detail-our-process{
@@ -404,7 +421,7 @@
         .our-process .main-content .title-item{
             font-size: 20px;
             font-weight: 800;
-            color: #333333;
+            color: var(--color-title);
         }
         .our-process .main-content .item{
             display: flex;
@@ -443,40 +460,343 @@
         .custom-section .description-custom-section{
             font-size: 16px;
             font-weight: 100;
-            color: #b1afaa;
+            color: var(--color-description);
             margin-bottom: 34px;
         }
 
         /* CONTAC-US */
+        .contact-us{
+            min-height: 612px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-us .title-contact-us{
+            margin-top: 92px;
+            font-family: "Raleway", sans-serif;
+            font-size: 36px;
+            color: var(--color-title);
+        }
+        .contact-us .divider{
+            background: var(--bg-primary-color);
+            margin: 30px 0;
+        }
+        .contact-us .description-contact-us{
+            margin-bottom: 76px;
+            font-size: 14px;
+            color: var(--color-description);
+        }
+        .contact-us form{
+            display: flex;
+            gap: 67px;
+            margin-bottom: 12px;
+        }
+        .contact-us .group-form-left{
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-us .group-form-left input,
+        .group-form-right textarea{
+            width: 527px;
+            height: 31px;
+            border: none;
+            box-shadow: 0px 1px #d6d6d6;
+            padding-left: 12px;
+            outline: none;
+            margin-bottom: 30px;
+        }
+        .group-form-right textarea{
+            height: 153px;
+        }
+        .contact-us .group-form-left input::placeholder,
+        .group-form-right textarea::placeholder{
+            color: #cecece;
+        }
 
+        /* FOOTER */
+        .footer{
+            height: 81px;
+            background-color: #000000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .footer .icons-footer{
+            display: flex;
+            gap: 30px;
+            margin: 22px 0 10px 0;  
+            font-size: 22px;          
+        }
+        .footer .content-footer{
+            font-size: 12px;
+            color: #86878b;
+        }
+
+        #home,
+        #features,
+        #about,
+        #pricing,
+        #contact {
+            scroll-margin-top: 70px; 
+        }
+
+        @media only screen and (max-width: 425px) {
+            .footer, .contact-us, .custom-section, .our-process{
+                display: none;
+            }
+
+            /* NAV */
+            .nav-right{
+                display: none;
+            }
+            .nav-left{
+                margin-left: 18px;
+            }
+
+            /* HEADER */
+            .header{
+                flex-wrap: wrap;
+                justify-content: center;
+                height: 100%;
+            }
+            .header-left, .header-right{
+                margin: 0px;
+            }
+            .header-left{
+                text-align: center;
+                width: 100%;
+                align-items: center;
+                margin-top: 40px;
+                padding: 30px;
+            }
+            .header-left .btn-download{
+                margin: 30px 0 20px 0;
+                width: 255px;
+            }
+            .header-left .detail{
+                padding: 0;
+                margin: 0;
+            }
+            .header-right{
+                margin-bottom: 60px;
+                width: 340px;
+            }
+            .header-right form input{
+                width: 265px;
+            }
+            .divider{
+                width: 64px;
+                background: #fff;
+                height: 2px;
+                margin: 25px 0;
+            }
+
+            /* FEATURES */
+            .feature-3{
+                display: none;
+            }
+            .feature-1, .feature-2, .feature-3{
+                flex-wrap: wrap;
+            }
+            .feature-1{
+                height: 100%;
+                justify-content: center;
+                gap: 28px;
+                padding: 50px 30px;
+            }
+            .feature-1 .tabs{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                margin: 20px 0 0 0;
+            }
+            .feature-1 .main-content{
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+            .feature-1 .main-content .descriptions-feature{
+                margin: 20px 0 36px 0;
+            }
+            .feature-1 .img-right-feature-1{
+                margin-right: 0px;
+            }
+            .btn-download-feature{
+                width: 250px;
+            }
+            .feature-1 .tabs{
+                gap: 10px;
+            }
+            .feature-1 .tabs .tab{
+                width: 90px;
+                height: 90px;
+            }
+            .feature-1 .tabs .tab:first-child {
+                border-radius: 5px 0 0 5px;
+            }
+            .feature-1 .tabs .tab:last-child {
+                border-radius: 0 5px 5px 0;
+            }
+
+            .feature-2{
+                height: 100%;
+                align-items: center;
+                justify-content: center;
+                gap: 0px;
+            }
+            .feature-2 .img-left-feature-2{
+                display: none;
+            }
+            .feature-2 .feature-2-content-right{
+                margin-right: 0;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 50px 30px;
+            }
+            .feature-2 .description-content{
+                text-align: center;
+            }
+        }
+
+        .nav-bars-btn{
+            font-size: 20px;
+            margin-right: 18px;
+        }
+        .nav-overlay{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            display: none;
+            animation: fadeIn linear 0.9s;
+        }
+        .nav-mobile{
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 320px;
+            max-width: 100%;
+            background-color: #fff;
+            z-index: 9999;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: opacity linear 0.3s, transform linear 0.3s;
+        }
+        .nav-list{
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .nav-link{
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 18px 0;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .nav-close{
+            font-size: 40px;
+            color: #666;
+            position: absolute;
+            top: 8px;
+            left: 12px;
+        }
+        .nav-input{
+            display: none;
+        }
+        .nav-input:checked ~ .nav-overlay{
+            display: block;
+        }
+        .nav-input:checked ~ .nav-mobile{
+            transform: translateX(0%);
+            opacity: 1;
+        }
+        .nav-item{
+            list-style-type: none;
+            color: var(--color-description);
+        }
+
+        @media only screen and (min-width: 425px) {
+            .nav-mb-container{
+                display: none;
+            }
+            .nav-bars-btn{
+                display: none;
+            }
+        }
+        @keyframes fadeIn {
+            form{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
 
     </style>
+    <link rel="stylesheet" href="./style/responsive-sp.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/airplane.css' rel='stylesheet'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" integrity="sha512-dUOcWaHA4sUKJgO7lxAQ0ugZiWjiDraYNeNJeRKGOIpEq4vroj1DpKcS3jP0K4Js4v6bXk31AAxAxaYt3Oi9xw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;500&family=Inter:wght@300;500;600&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@500&display=swap" rel="stylesheet">
 <body>
     <div class="container">
         <div class="nav">
-            <div class="nav-left">
-                <img class="logo" src="./asset/logo_navbar_u70.png" alt="">    
-            </div>
+            <a href="#home" class="nav-left"><img class="logo" src="./asset/logo_navbar_u70.png" alt=""></a>
             <div class="nav-right">
-                <a href="">Features</a>
-                <a href="">About</a>
-                <a href="">Pricing</a>
-                <a href="">Reviews</a>
-                <a href="">Contact</a>
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
             </div>
+            <label for="nav-mb-input" class="nav-bars-btn">
+                <i class="fa-solid fa-bars fa-2x" style="color: #ffffff;"></i>
+            </label>
         </div>
 
-        <div class="header">
+        <div class="nav-mb-container">
+            <input type="checkbox" hidden class="nav-input" id="nav-mb-input">
+            <label for="nav-mb-input" class="nav-overlay"></label>
+            <div class="nav-mobile">
+                <label for="nav-mb-input" class="nav-close">
+                    <i class="fa-solid fa-xmark"></i> 
+                </label>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link closeNav" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link closeNav" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link closeNav" href="#pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link closeNav" href="#reviews">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link closeNav" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="home" class="header">
             <div class="header-left">
                 <img class="logo" src="./asset/logo_navbar_u70.png" alt="">
                 <p class="title">MODERN AXURE TEMPLATE FOR BEAUTIFUL PROTOTYPES</p>
@@ -498,7 +818,7 @@
             </div>
         </div>
 
-        <div class="features">
+        <div id="features" class="features">
             <div class="feature-1">
                 <div class="tabs">
                     <p class="tab active">TAB 1</p>
@@ -586,7 +906,7 @@
             </div>
         </div>
 
-        <div class="our-process">
+        <div id="about" class="our-process">
             <p class="title-our-process">WHY THIS AWESOME</p>
             <div class="divider"></div>
             <p class="detail-our-process">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -629,7 +949,7 @@
             </div>
         </div>
 
-        <div class="custom-section">
+        <div id="pricing" class="custom-section">
             <p class="title-custom-section">STYLISH AXURE DESIGN</p>
             <div class="divider"></div>
             <p class="description-custom-section">Use the sections you need, remove the ones you don't.  
@@ -638,7 +958,36 @@
             <button class="btn-download">Download</button>
         </div>
 
-        
+        <div id="reviews" class="contact-us">
+            <p class="title-contact-us">CONTACT US</p>
+            <div class="divider"></div>
+            <p class="description-contact-us">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <form action="#">
+                <div class="group-form-left">
+                    <input class="form-name" type="text" id="name" name="name" placeholder="Name">
+                    <input class="form-email" type="email" id="email" name="email" placeholder="Email">
+                    <input class="form-password" type="password" id="password" name="password" placeholder="Password">
+                </div>
+                <div class="group-form-right">
+                    <textarea class="form-message" id="message" name="message" placeholder="Message"></textarea>
+                </div>
+            </form>
+            <button class="btn-download-contact-us" type="submit">Send Message</button>
+        </div>
+
+        <div id="contact" class="footer">
+            <div class="icons-footer">
+                <i class="fa-brands fa-facebook-f" style="color: #cccccc;"></i>
+                <i class="fa-brands fa-twitter" style="color: #cccccc;"></i>
+                <i class="fa-brands fa-google" style="color: #cccccc;"></i>
+                <i class="fa-brands fa-pinterest" style="color: #cccccc;"></i>
+                <i class="fa-brands fa-instagram" style="color: #cccccc;"></i>
+                <i class="fa-solid fa-rss" style="color: #cccccc;"></i>
+            </div>
+            <p class="content-footer">© 2021 Axure Themes</p>
+        </div>
     </div>
+
+    <script src="./index.js"></script>
 </body>
 </html>
