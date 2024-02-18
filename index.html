@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "Open Sans", sans-serif;
+        }
+        .container{}
+
+        /* NAV */
+        .nav{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            background: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+        }
+        .nav-left{
+            margin-left: 148px;
+        }
+        .nav-left .logo{
+            height: 26px;
+        }
+        .nav-right{
+            margin-right: 148px;
+            display: flex;
+            gap: 46px;
+            font-size: 14px;
+        }
+        .nav-right a{
+            cursor: pointer;
+            position: relative;
+            text-decoration: none;
+            color: #fff;
+        }
+        .nav-right a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -27px; 
+            width: 0;
+            height: 4px;
+            background-color: #f08436;
+            transition: width 0.3s; 
+        }
+        .nav-right a:hover::after {
+            width: 100%;
+        }
+
+        /* HEADER */
+        .header{
+            margin-top: 70px;
+            width: 100%;
+            height: 640px;
+            background-image: url('./asset/u2_state0.png');
+            background-position: center;  
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.5); 
+            background-blend-mode: multiply; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-left{
+            width: 36%;
+            margin-left: 148px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            color: #fff
+        }
+        .header-left .logo{
+            width: 175px;
+            margin-bottom: 34px;
+        }
+        .header-left .title{
+            font-size: 36px;
+        }
+        .divider{
+            width: 64px;
+            background: #fff;
+            height: 2px;
+            margin: 40px 0;
+        }
+        .header-left .detail{
+            font-family: "Raleway", sans-serif;
+            font-size: 16px;
+            font-weight: 100;
+            padding-right: 40px;
+            margin-bottom: 45px;
+        }
+        .btn-download {
+            background-color: rgba(221, 118, 0, 0);
+            color: #fff;
+            width: 135px;
+            height: 42px;
+            border: 2px solid #fff;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s; 
+        }
+        .btn-download:hover {
+            border-color: #f08436; 
+        }
+        .btn-download:active {
+            background-color: #f08436;
+        }
+        .header-right{
+            width: 360px;
+            margin-right: 148px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+            border-radius: 5px;
+        }  
+        .header-right form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        } 
+        .header-right .title-form{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 54px;
+            background-color: #f5f5f5;
+            border-radius: 5px 5px 0 0;
+            font-size: 20px;
+        } 
+        .header-right .title-form span{
+            margin: 0 6px;
+            color: #ff8b38;
+        } 
+        .header-right form input{
+            width: 285px;
+            height: 31px;
+            border: none;
+            box-shadow: 0px 1px 1px #d6d6d6;
+            padding-left: 12px;
+            outline: none;
+        }
+        .header-right form input::placeholder{
+            color: #bdbdbd;
+        }
+        .header-right form .form-name{
+            margin-top: 29px;
+        }
+        .header-right form .form-email{
+            margin-top: 36px;
+        }
+        .header-right form .form-password{
+            margin-top: 47px;
+        }
+        .header-right form .btn-form{
+            margin-top: 49px;
+        }
+        .header-right form .btn-form{
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ff9b51;
+            color: #fff;
+            width: 100%;
+            height: 54px;
+            font-size: 15px;
+            border: none;
+            border-radius: 0 0 5px 5px;
+            transition: background-color 0.4s, color 0.6s; 
+        }
+        .header-right form .btn-form:hover {
+            color: #f08436;
+            background-color: #fff;
+        }
+        .header-right form .btn-form:active {
+            color: #fff;
+            background-color: #f08436;
+        }
+
+        /* FEATURES */
+        /* FEATURE-1 */
+        .features{
+            
+        }
+        .feature-1{
+            height: 594px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 98px;
+            background-color: #f5f5f5;
+        }
+        .feature-1 .tabs{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            margin-left: 148px;
+        }
+        .feature-1 .tabs .tab{
+            width: 112px;
+            height: 112px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #333333;
+            color: #fff;
+            border: 1px solid #fff;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .feature-1 .tabs .tab:first-child {
+            border-radius: 5px 5px 0 0;
+        }
+        .feature-1 .tabs .tab:last-child {
+            border-radius: 0 0 5px 5px;
+        }
+        .feature-1 .tabs .tab.active{
+            justify-content: center;
+            background-color: #ff8b38;
+        }
+        .feature-1 .main-content{
+            display: flex;
+            flex-direction: column;
+        }
+        .feature-1 .main-content .title-feature{
+            font-size: 20px;
+            font-weight: 800;
+            color: #212121;
+        }
+        .feature-1 .main-content .descriptions-feature{
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+            margin: 50px 0 46px 0;
+            font-size: 14px;
+            color: #86878b;
+        }
+        .feature-1 .main-content .btn-download-feature{
+            background-color: #f08436;
+            border-radius: 4px;
+            color: #fff;
+            width: 121px;
+            height: 46px;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.4s, color 0.4s; 
+            margin-bottom: 15px;
+        }
+        .feature-1 .main-content .btn-download-feature:hover {
+            color: #f08436;
+            background-color: #fff;
+        }
+        .feature-1 .main-content .btn-download-feature:active {
+            border: 2px solid #f08436;
+        }
+        .feature-1 .img-right-feature-1{
+            margin-right: 148px;
+            width: 320px;
+            height: 253px;
+        }
+
+        /* FEATURE-2 */
+        .feature-2{
+            height: 594px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 144px;
+            background-color: #ffffff;
+        }
+        .feature-2 .img-left-feature-2{
+            width: 525px;
+            height: 375px;
+            margin-left: 100px;
+        }
+        .feature-2 .divider{
+            background: #ff8b38;
+            margin: 26px 0;
+        }
+        .feature-2 .feature-2-content-right{
+            margin-right: 148px;
+            width: 36%;
+        }
+        .feature-2 .title-content{
+            font-size: 20px;
+            font-weight: 800;
+            color: #212121;
+        }
+        .feature-2 .description-content{
+            color: #86878b;
+            font-size: 14px;
+            margin-bottom: 48px;
+        }
+        .feature-2 .items-content{
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .feature-2 .items-content .item{
+            display: flex;
+            gap: 30px;
+            color: #86878b;
+            font-size: 14px;
+        }
+        .icon-in-circle{
+            min-width: 40px; 
+            height: 40px; 
+            border: 2px solid #ff8b38;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .feature-2 .title-item{
+            font-size: 14px;
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        /* FEATURE-3 */
+        .feature-3{
+            height: 594px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 110px;
+            background-color: #f5f5f5;
+        }
+        .feature-3 .feature-3-content-left{
+            margin-left: 152px;
+        }
+        .feature-3 .title-content{
+            font-size: 20px;
+            font-weight: 800;
+            color: #212121;
+        }
+        .feature-3 .divider{
+            background: #ff8b38;
+            margin: 26px 0;
+        }
+        .feature-3 .main-content{
+            margin-right: 74px;
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+        }
+        .feature-3 .main-content .description-content{
+            color: #86878b;
+            font-size: 14px;
+        }
+        .feature-3 .img-feature-3{
+            margin-right: 74px;
+        }
+
+        /* OUR-PROCESS */
+        .our-process{
+            height: 594px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 142px;
+        }
+        .our-process .title-our-process{
+            font-size: 36px;
+        }
+        .our-process .divider{
+            background: #ff8b38;
+            margin: 30px 0;
+        }
+        .our-process .detail-our-process{
+            margin-bottom: 80px;
+        }
+        .our-process .detail-our-process, 
+        .our-process .main-content .content-item{
+            font-size: 14px;
+            color: #86878b;
+        }
+        .our-process .title-thoughtful-design{
+            font-size: 14px;
+        }
+        .our-process .main-content{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .our-process .main-content .title-item{
+            font-size: 20px;
+            font-weight: 800;
+            color: #333333;
+        }
+        .our-process .main-content .item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        .our-process .icon-in-circle{
+            width: 70px; 
+            height: 70px; 
+        }
+
+        /* CUSTOM-SECTION */
+        .custom-section{
+            height: 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: url('./asset/u25_state0.png');
+            background-position: center;  
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.5); 
+            background-blend-mode: multiply; 
+            font-family: "Raleway", sans-serif;
+            color: #ffffff;
+        }
+        .custom-section .title-custom-section{
+            font-size: 36px;
+        }
+        .custom-section .divider{
+            background: #ffffff;
+            margin: 30px 0;
+        }
+        .custom-section .description-custom-section{
+            font-size: 16px;
+            font-weight: 100;
+            color: #b1afaa;
+            margin-bottom: 34px;
+        }
+
+        /* CONTAC-US */
+
+
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/airplane.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;500&family=Inter:wght@300;500;600&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@500&display=swap" rel="stylesheet">
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="nav-left">
+                <img class="logo" src="./asset/logo_navbar_u70.png" alt="">    
+            </div>
+            <div class="nav-right">
+                <a href="">Features</a>
+                <a href="">About</a>
+                <a href="">Pricing</a>
+                <a href="">Reviews</a>
+                <a href="">Contact</a>
+            </div>
+        </div>
+
+        <div class="header">
+            <div class="header-left">
+                <img class="logo" src="./asset/logo_navbar_u70.png" alt="">
+                <p class="title">MODERN AXURE TEMPLATE FOR BEAUTIFUL PROTOTYPES</p>
+                <div class="divider"></div>
+                <p class="detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+                    euismod bibendum laoreet. Proin gravida dolor sit amet lacus
+                    accumsan et viverra justo commodo.</p>
+                <button class="btn-download">Download</button>
+            </div>
+
+            <div class="header-right">
+                <h3 class="title-form">Try Your <span>FREE</span> Trial Today </h3>
+                <form action="#">
+                    <input class="form-name" type="text" id="name" name="name" placeholder="Name">
+                    <input class="form-email" type="email" id="email" name="email" placeholder="Email">
+                    <input class="form-password" type="password" id="password" name="password" placeholder="Password">
+                    <button class="btn-form" type="submit">Get Started</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature-1">
+                <div class="tabs">
+                    <p class="tab active">TAB 1</p>
+                    <p class="tab">TAB 2</p>
+                    <p class="tab">TAB 3</p>
+                </div>
+                <div class="main-content">
+                    <p class="title-feature">Tabs with soft transitioning effect.</p>
+                    <div class="descriptions-feature">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
+                            bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra 
+                            justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque 
+                            penatibus et magnis dis parturient montes.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
+                            bibendum laoreet.
+                        </p>
+                    </div>
+                    <button class="btn-download-feature">Download</button>
+                </div>
+                <img src="./asset/image_right_u255.png" class="img-right-feature-1" alt="">  
+            </div>
+
+            <div class="feature-2">
+                <img src="./asset/image_left_sub_list_u260.png" class="img-left-feature-2" alt="">
+                <div class="feature-2-content-right">
+                    <p class="title-content">Sub list section</p>
+                    <div class="divider"></div>
+                    <p class="description-content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
+                        bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra 
+                        justo commodo.
+                    </p>
+                    <div class="items-content">
+                        <div class="item">
+                            <div class="icon-in-circle">
+                                <i class='fa fa-cloud-upload' style="color: #ff8b38;"></i>
+                            </div>
+                            <div>
+                                <p class="title-item">Title</p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
+                                    bibendum laoreet. 
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="item">
+                            <div class="icon-in-circle">
+                                <i class='fa-solid fa-cloud-arrow-down' style="color: #ff8b38;"></i>
+                            </div>
+                            <div>
+                                <p class="title-item">Title</p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
+                                    bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra 
+                                    justo commodo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-3">
+                <div class="feature-3-content-left">
+                    <p class="title-content">Standard Picture Section</p>
+                    <div class="divider"></div>
+                    <div class="main-content">
+                        <p class="description-content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean 
+                            euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan 
+                            et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis 
+                            natoque penatibus et magnis dis parturient montes.
+                        </p>
+                        <p class="description-content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
+                            bibendum laoreet.
+                        </p>
+                    </div>
+                </div>
+                <img src="./asset/image_right_standard_u262.png" class="img-feature-3" alt="">
+            </div>
+        </div>
+
+        <div class="our-process">
+            <p class="title-our-process">WHY THIS AWESOME</p>
+            <div class="divider"></div>
+            <p class="detail-our-process">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="main-content">
+                <div class="item thoughtful-design">
+                    <div class="icon-in-circle">
+                        <i class="fa-regular fa-lightbulb fa-2x" style="color: #ff8b38;"></i>
+                    </div>
+                    <p class="title-item">Thoughtful Design</p>
+                    <p class="content-item">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing 
+                        elit. Aenean euismod bibendum laoreet. Proin gravida 
+                        dolor sit amet lacus accumsan et viverra.
+                    </p>
+                </div>
+
+                <div class="item well-craftred">
+                    <div class="icon-in-circle">
+                        <i class="fa fa-keyboard-o fa-2x" style="color: #ff8b38;"></i>
+                    </div>
+                    <p class="title-item">Well Craftred</p>
+                    <p class="content-item">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing 
+                        elit. Aenean euismod bibendum laoreet. Proin gravida 
+                        dolor sit amet lacus accumsan et viverra.
+                    </p>
+                </div>
+
+                <div class="item easy-to-customize">
+                    <div class="icon-in-circle">
+                        <i class='fa-solid fa-bolt-lightning fa-2x' style="color: #ff8b38;"></i>
+                    </div>
+                    <p class="title-item">Easy to Customize</p>
+                    <p class="content-item">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing 
+                        elit. Aenean euismod bibendum laoreet. Proin gravida 
+                        dolor sit amet lacus accumsan et viverra.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="custom-section">
+            <p class="title-custom-section">STYLISH AXURE DESIGN</p>
+            <div class="divider"></div>
+            <p class="description-custom-section">Use the sections you need, remove the ones you don't.  
+                Create gorgeous prototypes faster than ever!
+            </p>
+            <button class="btn-download">Download</button>
+        </div>
+
+        
+    </div>
+</body>
+</html>
