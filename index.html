@@ -540,8 +540,8 @@
             scroll-margin-top: 70px; 
         }
 
-        @media only screen and (max-width: 425px) {
-            .footer, .contact-us, .custom-section, .our-process{
+        @media only screen and (max-width: 431px) {
+            .footer, .contact-us, .custom-section{
                 display: none;
             }
 
@@ -558,6 +558,7 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 height: 100%;
+                padding: 50px 0;
             }
             .header-left, .header-right{
                 margin: 0px;
@@ -566,11 +567,10 @@
                 text-align: center;
                 width: 100%;
                 align-items: center;
-                margin-top: 40px;
-                padding: 30px;
+                padding: 10px 30px;
             }
             .header-left .btn-download{
-                margin: 30px 0 20px 0;
+                margin: 30px 0;
                 width: 255px;
             }
             .header-left .detail{
@@ -578,11 +578,11 @@
                 margin: 0;
             }
             .header-right{
-                margin-bottom: 60px;
-                width: 340px;
+                margin: 0 40px;
+                width: 100%;
             }
             .header-right form input{
-                width: 265px;
+                width: 235px;
             }
             .divider{
                 width: 64px;
@@ -592,9 +592,6 @@
             }
 
             /* FEATURES */
-            .feature-3{
-                display: none;
-            }
             .feature-1, .feature-2, .feature-3{
                 flex-wrap: wrap;
             }
@@ -658,6 +655,35 @@
             }
             .feature-2 .description-content{
                 text-align: center;
+            }
+
+            .feature-3 {
+                /* height: 100%; */
+                /* flex-wrap: wrap; */
+                /* width: 100%; */
+                justify-content: center;
+                gap: 0;
+            }
+            .feature-3 .feature-3-content-left{
+                margin-left: 0;
+                padding: 50px 30px 10px 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .feature-3 .main-content{
+                margin-right: 0;
+                gap: 26px;
+                text-align: center;
+            }
+            .feature-3 .img-feature-3{
+                width: 100%;
+                margin: 0;
+            }
+
+            /* OUT-PROCESS */
+            .our-process{
+                display: none;
             }
         }
 
