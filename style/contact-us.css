@@ -1,0 +1,48 @@
+/* CONTAC-US */
+.contact-us{
+    height: 612px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact-us .title-contact-us{
+    margin-top: 92px;
+    font-family: "Raleway", sans-serif;
+    font-size: 36px;
+    color: var(--color-title);
+}
+.contact-us .divider{
+    background: var(--bg-primary-color);
+    margin: 30px 0;
+}
+.contact-us .description-contact-us{
+    margin-bottom: 76px;
+    font-size: 14px;
+    color: var(--color-description);
+}
+.contact-us form{
+    display: flex;
+    gap: 67px;
+    margin-bottom: 12px;
+}
+.contact-us .group-form-left{
+    display: flex;
+    flex-direction: column;
+}
+.contact-us .group-form-left input,
+.group-form-right textarea{
+    width: 527px;
+    height: 31px;
+    border: none;
+    box-shadow: 0px 1px #d6d6d6;
+    padding-left: 12px;
+    outline: none;
+    margin-bottom: 30px;
+}
+.group-form-right textarea{
+    height: 153px;
+}
+.contact-us .group-form-left input::placeholder,
+.group-form-right textarea::placeholder{
+    color: #cecece;
+}

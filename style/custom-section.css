@@ -1,0 +1,29 @@
+/* CUSTOM-SECTION */
+.custom-section{
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../asset/images/custom-section/u25_state0.png');
+    background-position: center;  
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.5); 
+    background-blend-mode: multiply; 
+    font-family: "Raleway", sans-serif;
+    color: #ffffff;
+}
+.custom-section .title-custom-section{
+    font-size: 36px;
+}
+.custom-section .divider{
+    background: #ffffff;
+    margin: 30px 0;
+}
+.custom-section .description-custom-section{
+    font-size: 16px;
+    font-weight: 100;
+    color: var(--color-description);
+    margin-bottom: 34px;
+}

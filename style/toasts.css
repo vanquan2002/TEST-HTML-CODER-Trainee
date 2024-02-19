@@ -1,0 +1,122 @@
+/* TOASTS */
+.toasts{
+    position: fixed;
+    top: 90px;
+    right: 10px;
+    z-index: 9;
+}
+.toast{
+    padding: 10px 20px;
+    color: #fff;
+    animation: show_massage ease 2s forwards;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.toast.download,
+.toast.send-message,
+.toast.get-started,
+.toast.download-feature
+{
+    background-color: var(--bg-primary-color);
+    border-left: 6px solid #c8651e;
+}
+.toast.error{
+    background-color: rgb(223, 60, 60);
+    border-left: 6px solid rgb(191, 15, 15);
+}
+.countdown{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    animation: countdown ease 6s forwards;
+}
+.toast.download .countdown,
+.toast.send-message .countdown,
+.toast.get-started .countdown,
+.toast.download-feature .countdown
+{
+    background-color: #c8651e;
+}
+.toast.error .countdown
+{
+    background-color: rgb(191, 15, 15);
+}
+@keyframes countdown{
+    0%{
+        width: 100%;
+    }
+    100%{
+        width: 0%;
+    }
+}
+@keyframes show_massage{
+    0%{
+        transform: translateX(100%);
+    }
+    25%{
+        transform: translateX(-10%);
+    }
+    50%{
+        transform: translateX(0%);
+    }
+    75%{
+        transform: translateX(-5%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes show_message_mobile {
+    0% {
+        transform: translateY(-100%);
+    }
+    25% {
+        transform: translateY(10%);
+    }
+    50% {
+        transform: translateY(0%);
+    }
+    75% {
+        transform: translateY(5%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+@keyframes hide_massage{
+    0%{
+        transform: translateX(0%);
+    }
+    25%{
+        transform: translateX(-10%);
+    }
+    50%{
+        transform: translateX(0%);
+    }
+    75%{
+        transform: translateX(-10%);
+    }
+    100%{
+        transform: translateX(200%);
+    }
+}
+@keyframes hide_massage_mobile{
+    0%{
+        transform: translateY(0%);
+    }
+    25%{
+        transform: translateY(10%);
+    }
+    50%{
+        transform: translateY(0%);
+    }
+    75%{
+        transform: translateY(10%);
+    }
+    100%{
+        transform: translateY(-200%);
+    }
+}

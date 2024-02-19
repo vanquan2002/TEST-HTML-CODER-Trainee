@@ -1,0 +1,187 @@
+/* FEATURES */
+
+/* FEATURE-1 */
+.features{}
+.feature-1{
+    height: 594px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 98px;
+    background-color: #f5f5f5;
+}
+.feature-1 .tabs{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 148px;
+}
+.feature-1 .tabs .tab{
+    width: 112px;
+    height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333333;
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.feature-1 .tabs .tab:first-child {
+    border-radius: 5px 5px 0 0;
+}
+.feature-1 .tabs .tab:last-child {
+    border-radius: 0 0 5px 5px;
+}
+.feature-1 .tabs .tab.active{
+    justify-content: center;
+    background-color: var(--bg-primary-color);
+}
+.feature-1 .main-content{
+    display: flex;
+    flex-direction: column;
+}
+.feature-1 .main-content .title-feature{
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-title);
+}
+.feature-1 .main-content .descriptions-feature{
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    margin: 50px 0 46px 0;
+    font-size: 14px;
+    color: var(--color-description);
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+.feature-1 .main-content .descriptions-feature.fade-out{
+    opacity: 0;
+}
+.btn-download-feature, 
+.btn-send-contact-us{
+    background-color: var(--bg-primary-color);
+    border-radius: 4px;
+    color: #fff;
+    width: 121px;
+    height: 46px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.4s, color 0.4s; 
+    margin-bottom: 15px;
+    box-shadow: 0px 2px 2px #d6d6d6;
+}
+.btn-send-contact-us{
+    width: 148px;
+    background-color: #ff9b51;
+    margin-bottom: 0px;
+}
+.btn-download-feature:hover, 
+.btn-send-contact-us:hover{
+    color: var(--bg-primary-color);
+    background-color: #fff;
+}
+.feature-1 .img-right-feature-1{
+    margin-right: 148px;
+    width: 320px;
+    height: 253px;
+}
+
+/* FEATURE-2 */
+.feature-2{
+    height: 594px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 144px;
+    background-color: #ffffff;
+}
+.feature-2 .img-left-feature-2{
+    width: 525px;
+    height: 375px;
+    margin-left: 100px;
+}
+.feature-2 .divider{
+    background: var(--bg-primary-color);
+    margin: 26px 0;
+}
+.feature-2 .feature-2-content-right{
+    margin-right: 148px;
+    width: 36%;
+}
+.feature-2 .title-content{
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-title);
+}
+.feature-2 .description-content{
+    color: var(--color-description);
+    font-size: 14px;
+    margin-bottom: 48px;
+}
+.feature-2 .items-content{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.feature-2 .items-content .item{
+    display: flex;
+    gap: 30px;
+    color: #86878b;
+    font-size: 14px;
+}
+.icon-in-circle{
+    min-width: 40px; 
+    height: 40px; 
+    border: 2px solid var(--bg-primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.feature-2 .title-item{
+    font-size: 14px;
+    color: var(--color-title);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+/* FEATURE-3 */
+.feature-3{
+    height: 594px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 110px;
+    background-color: #f5f5f5;
+}
+.feature-3 .feature-3-content-left{
+    margin-left: 152px;
+}
+.feature-3 .title-content{
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-title);
+}
+.feature-3 .divider{
+    background: var(--bg-primary-color);
+    margin: 26px 0;
+}
+.feature-3 .main-content{
+    margin-right: 74px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+.feature-3 .main-content .description-content{
+    color: var(--color-description);
+    font-size: 14px;
+}
+.feature-3 .img-feature-3{
+    margin-right: 74px;
+}

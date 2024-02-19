@@ -1,0 +1,124 @@
+/* HEADER */
+.header{
+    margin-top: 70px;
+    width: 100%;
+    height: 640px;
+    background-image: url('../asset/images/header/u2_state0.png');
+    background-position: center;  
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.5); 
+    background-blend-mode: multiply; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-left{
+    width: 36%;
+    margin-left: 148px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    color: #fff
+}
+.header-left .logo{
+    width: 175px;
+    margin-bottom: 34px;
+}
+.header-left .title{
+    font-size: 36px;
+}
+.divider{
+    width: 64px;
+    background: #fff;
+    height: 2px;
+    margin: 40px 0;
+}
+.header-left .detail{
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+    padding-right: 40px;
+    margin-bottom: 45px;
+}
+.btn-download {
+    background-color: rgba(221, 118, 0, 0);
+    color: #fff;
+    width: 135px;
+    height: 42px;
+    border: 2px solid #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s; 
+}
+.btn-download:hover {
+    border-color: var(--bg-primary-color); 
+}
+.header-right{
+    width: 360px;
+    margin-right: 148px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 5px;
+}  
+.header-right form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+} 
+.header-right .title-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 54px;
+    background-color: #f5f5f5;
+    border-radius: 5px 5px 0 0;
+    font-size: 20px;
+} 
+.header-right .title-form span{
+    margin: 0 6px;
+    color: var(--bg-primary-color);
+} 
+.header-right form input{
+    width: 285px;
+    height: 31px;
+    border: none;
+    box-shadow: 0px 1px 1px #d6d6d6;
+    padding-left: 12px;
+    outline: none;
+}
+.header-right form input::placeholder{
+    color: #bdbdbd;
+}
+.header-right form .form-name{
+    margin-top: 29px;
+}
+.header-right form .form-email{
+    margin-top: 36px;
+}
+.header-right form .form-password{
+    margin-top: 47px;
+}
+.btn-form{
+    margin-top: 49px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff9b51;
+    color: #fff;
+    width: 100%;
+    height: 54px;
+    font-size: 15px;
+    border: none;
+    border-radius: 0 0 5px 5px;
+    transition: background-color 0.4s, color 0.6s; 
+}
+.btn-form:hover {
+    color: var(--bg-primary-color);
+    background-color: #fff;
+}
