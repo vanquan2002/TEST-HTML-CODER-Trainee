@@ -229,6 +229,8 @@
             border: 1px solid #fff;
             font-size: 15px;
             font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
         }
         .feature-1 .tabs .tab:first-child {
             border-radius: 5px 5px 0 0;
@@ -256,6 +258,11 @@
             margin: 50px 0 46px 0;
             font-size: 14px;
             color: var(--color-description);
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .feature-1 .main-content .descriptions-feature.fade-out{
+            opacity: 0;
         }
         .btn-download-feature, 
         .btn-download-contact-us{
@@ -466,7 +473,7 @@
 
         /* CONTAC-US */
         .contact-us{
-            min-height: 612px;
+            height: 612px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -527,6 +534,15 @@
             margin: 22px 0 10px 0;  
             font-size: 22px;          
         }
+        .footer .icons-footer i{
+            color: #cccccc;    
+            transition: 0.3s;  
+            cursor: pointer;   
+        }
+        .footer .icons-footer i:hover, 
+        .footer .icons-footer i:active{
+            color: var(--bg-primary-color);         
+        }
         .footer .content-footer{
             font-size: 12px;
             color: #86878b;
@@ -536,15 +552,12 @@
         #features,
         #about,
         #pricing,
+        #reviews,
         #contact {
             scroll-margin-top: 70px; 
         }
 
-        @media only screen and (max-width: 431px) {
-            .footer, .contact-us, .custom-section{
-                display: none;
-            }
-
+        @media only screen and (max-width: 435px) {
             /* NAV */
             .nav-right{
                 display: none;
@@ -558,7 +571,7 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 height: 100%;
-                padding: 50px 0;
+                padding: 70px 0;
             }
             .header-left, .header-right{
                 margin: 0px;
@@ -567,11 +580,24 @@
                 text-align: center;
                 width: 100%;
                 align-items: center;
-                padding: 10px 30px;
+                padding: 0px 30px;
             }
             .header-left .btn-download{
-                margin: 30px 0;
-                width: 255px;
+                margin: 50px 0 60px 0;
+            }
+            .btn-download-feature,
+            .btn-download-contact-us,
+            .btn-download {
+                width: 80%;
+                height: 60px;
+                font-size: 18px;
+            }
+            .btn-download:hover,
+            .btn-form:hover,
+            .footer .icons-footer i:hover,
+            .btn-download-feature:hover, 
+            .btn-download-contact-us:hover {
+                pointer-events: none;
             }
             .header-left .detail{
                 padding: 0;
@@ -579,10 +605,10 @@
             }
             .header-right{
                 margin: 0 40px;
-                width: 100%;
+                width: 80%;
             }
             .header-right form input{
-                width: 235px;
+                width: 80%;
             }
             .divider{
                 width: 64px;
@@ -599,7 +625,7 @@
                 height: 100%;
                 justify-content: center;
                 gap: 28px;
-                padding: 50px 30px;
+                padding: 40px 30px 70px 30px;
             }
             .feature-1 .tabs{
                 display: flex;
@@ -612,21 +638,22 @@
                 align-items: center;
                 justify-content: center;
                 text-align: center;
+                padding: 20px 0;
+            }
+            .feature-1 .main-content .title-feature{
+                margin-bottom: 10px;
             }
             .feature-1 .main-content .descriptions-feature{
-                margin: 20px 0 36px 0;
+                margin: 20px 0 40px 0;
             }
             .feature-1 .img-right-feature-1{
                 margin-right: 0px;
             }
-            .btn-download-feature{
-                width: 250px;
-            }
             .feature-1 .tabs{
-                gap: 10px;
+                gap: 5px;
+                width: 100%;
             }
             .feature-1 .tabs .tab{
-                width: 90px;
                 height: 90px;
             }
             .feature-1 .tabs .tab:first-child {
@@ -651,47 +678,103 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                padding: 50px 30px;
+                padding: 60px 30px;
             }
             .feature-2 .description-content{
                 text-align: center;
             }
 
             .feature-3 {
-                /* height: 100%; */
-                /* flex-wrap: wrap; */
-                /* width: 100%; */
-                justify-content: center;
+                height: 100%;
                 gap: 0;
+                padding: 55px 30px 35px 30px;
             }
             .feature-3 .feature-3-content-left{
                 margin-left: 0;
-                padding: 50px 30px 10px 30px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
             }
             .feature-3 .main-content{
                 margin-right: 0;
-                gap: 26px;
+                gap: 12px;
                 text-align: center;
             }
             .feature-3 .img-feature-3{
                 width: 100%;
-                margin: 0;
+                margin-top: 25px;
             }
 
             /* OUT-PROCESS */
             .our-process{
-                display: none;
+                height: 100%;
+                margin: 0;
+                padding: 55px 40px 65px 40px;
+                text-align: center;
+            }
+            .our-process .title-our-process{
+                font-size: 30px;
+            }
+            .our-process .detail-our-process{
+                margin-bottom: 40px;
+            }
+            .our-process .main-content{
+                flex-direction: column;
+                gap: 45px;
+            }
+            .our-process .main-content .item{
+                gap: 10px;
+            }
+            .our-process .main-content .title-item{
+                margin-top: 8px;
+            }
+
+            /* CUSTOM-SECTION */
+            .custom-section{
+                text-align: center;
+                padding: 10px 30px 20px 30px;
+            }
+            .custom-section .title-custom-section{
+                font-size: 30px;
+            }
+            .custom-section .description-custom-section{
+                margin-bottom: 28px;
+            }
+            
+            /* CONTACT-US */
+            .contact-us{
+                padding: 60px 30px 50px 30px;
+                text-align: center;
+                height: 100%;
+            }
+            .contact-us .title-contact-us{
+                margin-top: 0;
+            }
+            .contact-us .description-contact-us{
+                margin-bottom: 46px;
+            }
+            .contact-us form{
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 0;
+            }
+            .contact-us .group-form-left input,
+            .group-form-right textarea{
+                width: 327px;
+            }
+
+            /* FOOTER */
+            .footer .icons-footer{
+                gap: 20px;
             }
         }
 
         .nav-bars-btn{
             font-size: 20px;
             margin-right: 18px;
+            padding-right: 18px;
         }
-        .nav-overlay{
+        .nav-mb .nav-overlay{
             position: fixed;
             top: 0;
             left: 0;
@@ -700,71 +783,76 @@
             background-color: rgba(0, 0, 0, 0.3);
             z-index: 999;
             display: none;
-            animation: fadeIn linear 0.9s;
         }
-        .nav-mobile{
+        .nav-mb .nav-mb-main{
             position: fixed;
             top: 0;
             right: 0;
             bottom: 0;
             width: 320px;
             max-width: 100%;
-            background-color: #fff;
+            background-color: #333333;
             z-index: 9999;
             opacity: 0;
             transform: translateX(100%);
             transition: opacity linear 0.3s, transform linear 0.3s;
         }
-        .nav-list{
+        .nav-mb .nav-list{
             margin-top: 100px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .nav-link{
+        .nav-mb .nav-link{
             text-decoration: none;
-            color: #333;
+            color: #ffffff;
             display: block;
-            padding: 18px 0;
+            margin: 15px 0;
+            padding: 5px;
             font-size: 20px;
             font-weight: 500;
+            letter-spacing: 1.5px;
         }
-        .nav-close{
+        .nav-mb .nav-close{
             font-size: 40px;
             color: #666;
             position: absolute;
             top: 8px;
             left: 12px;
         }
-        .nav-input{
+        .nav-mb .nav-input{
             display: none;
         }
-        .nav-input:checked ~ .nav-overlay{
+        .nav-mb .nav-input:checked ~ .nav-overlay{
             display: block;
         }
-        .nav-input:checked ~ .nav-mobile{
+        .nav-mb .nav-input:checked ~ .nav-mb-main{
             transform: translateX(0%);
             opacity: 1;
         }
-        .nav-item{
+        .nav-mb .nav-item{
             list-style-type: none;
             color: var(--color-description);
         }
+        .nav-mb .logo{
+            position: absolute;
+            top: 70%;
+            left: 25%;
+            
+        }
+        .nav-mb .nav-link:active,
+        .nav-mb .nav-close:active, 
+        .nav-bars-btn:active
+        {
+            color: var(--bg-primary-color);
+        }
 
-        @media only screen and (min-width: 425px) {
-            .nav-mb-container{
+        @media only screen and (min-width: 435px) {
+            .nav-mb{
                 display: none;
             }
             .nav-bars-btn{
                 display: none;
-            }
-        }
-        @keyframes fadeIn {
-            form{
-                opacity: 0;
-            }
-            to{
-                opacity: 1;
             }
         }
 
@@ -795,12 +883,13 @@
             </label>
         </div>
 
-        <div class="nav-mb-container">
+        <!-- NAV-MOBILE -->
+        <div class="nav-mb">
             <input type="checkbox" hidden class="nav-input" id="nav-mb-input">
             <label for="nav-mb-input" class="nav-overlay"></label>
-            <div class="nav-mobile">
+            <div class="nav-mb-main">
                 <label for="nav-mb-input" class="nav-close">
-                    <i class="fa-solid fa-xmark"></i> 
+                    <i class="fa-solid fa-xmark" style="color: #ffffff;"></i> 
                 </label>
                 <ul class="nav-list">
                     <li class="nav-item">
@@ -819,6 +908,7 @@
                         <a class="nav-link closeNav" href="#contact">Contact</a>
                     </li>
                 </ul>
+                <img class="logo" src="./asset/logo_navbar_u70.png" alt="">
             </div>
         </div>
         
@@ -854,13 +944,13 @@
                 <div class="main-content">
                     <p class="title-feature">Tabs with soft transitioning effect.</p>
                     <div class="descriptions-feature">
-                        <p>
+                        <p class="descriptions-feature-item-1">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
                             bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra 
                             justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque 
                             penatibus et magnis dis parturient montes.
                         </p>
-                        <p>
+                        <p class="descriptions-feature-item-2">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod 
                             bibendum laoreet.
                         </p>
@@ -1003,12 +1093,12 @@
 
         <div id="contact" class="footer">
             <div class="icons-footer">
-                <i class="fa-brands fa-facebook-f" style="color: #cccccc;"></i>
-                <i class="fa-brands fa-twitter" style="color: #cccccc;"></i>
-                <i class="fa-brands fa-google" style="color: #cccccc;"></i>
-                <i class="fa-brands fa-pinterest" style="color: #cccccc;"></i>
-                <i class="fa-brands fa-instagram" style="color: #cccccc;"></i>
-                <i class="fa-solid fa-rss" style="color: #cccccc;"></i>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-google"></i>
+                <i class="fa-brands fa-pinterest"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-solid fa-rss"></i>
             </div>
             <p class="content-footer">© 2021 Axure Themes</p>
         </div>
