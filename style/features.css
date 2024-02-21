@@ -62,30 +62,6 @@
 .feature-1 .main-content .descriptions-feature.fade-out{
     opacity: 0;
 }
-.btn-download-feature, 
-.btn-send-contact-us{
-    background-color: var(--bg-primary-color);
-    border-radius: 4px;
-    color: #fff;
-    width: 121px;
-    height: 46px;
-    font-size: 15px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.4s, color 0.4s; 
-    margin-bottom: 15px;
-    box-shadow: 0px 2px 2px #d6d6d6;
-}
-.btn-send-contact-us{
-    width: 148px;
-    background-color: #ff9b51;
-    margin-bottom: 0px;
-}
-.btn-download-feature:hover, 
-.btn-send-contact-us:hover{
-    color: var(--bg-primary-color);
-    background-color: #fff;
-}
 .feature-1 .img-right-feature-1{
     margin-right: 148px;
     width: 320px;

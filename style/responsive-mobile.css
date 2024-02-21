@@ -239,8 +239,9 @@
 
     /* CUSTOM-SECTION */
     .custom-section{
+        height: 100%;
         text-align: center;
-        padding: 40px 30px 50px 30px;
+        padding: 70px 30px;
     }
     .custom-section .title-custom-section{
         font-size: 30px;
